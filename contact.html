@@ -103,26 +103,24 @@
                         <div class="shadow-box">
                             <img src="./assets/images/bg1.png" alt="BG" class="bg-img">
                             <h1>Send a <span>message</span></h1>
-                            <form action="mailto:ppetro02@ucy.ac.cy" method="post" enctype="text/plain">
-                                <div class="alert alert-success messenger-box-contact__msg" style="display: none" role="alert">
-                                    Your message was sent successfully.
-                                </div>
-                                <div class="input-group">
-                                    <input type="text" name="full-name" id="full-name" placeholder="Name *">
-                                </div>
-                                <div class="input-group">
-                                    <input type="email" name="email" id="email" placeholder="Email *">
-                                </div>
-                                <div class="input-group">
-                                    <input type="text" name="subject" id="subject" placeholder="Your Subject *">
-                                </div>
-                                <div class="input-group">
-                                    <textarea name="message" id="message" placeholder="Your Message *"></textarea>
-                                </div>
-                                <div class="input-group">
-                                    <button class="theme-btn submit-btn" name="submit" type="submit">Send Message</button>
-                                </div>
-                            </form>
+                            <form method="POST" action="https://formspree.io/f/mqkrkgwg">
+    <div class="input-group">
+        <input type="text" name="full-name" id="full-name" placeholder="Name *">
+    </div>
+    <div class="input-group">
+        <input type="email" name="email" id="email" placeholder="Email *">
+    </div>
+    <div class="input-group">
+        <input type="text" name="subject" id="subject" placeholder="Your Subject *">
+    </div>
+    <div class="input-group">
+        <textarea name="message" id="message" placeholder="Your Message *"></textarea>
+    </div>
+    <div class="input-group">
+        <button class="theme-btn submit-btn" type="submit">Send Message</button>
+    </div>
+</form>
+
                         </div>
                     </div>
                     
