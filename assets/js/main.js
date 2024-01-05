@@ -25,3 +25,31 @@ var div = document.createElement("div");
     document.body.insertBefore(div,document.body.firstChild),window.onload=function() {
     document.getElementById("preloader").classList.add("off")
 };
+
+document.getElementById('myForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submit action
+
+    var form = this;
+
+    fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            form.reset(); // Reset the form to clear the fields
+            document.getElementById('successMessage').style.display = 'block'; // Show the success message
+        } else {
+            response.json().then(data => {
+                if (data.errors) {
+                    // Handle the errors
+                    console.log(data.errors);
+                }
+            });
+        }
+    }).catch(error => {
+        console.log(error);
+    });
+});
